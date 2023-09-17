@@ -1,7 +1,6 @@
 #ifndef QUICKUNION_H
 #define QUICKUNION_H
 
-using namespace std;
 
 class Quickunion
 {
@@ -16,14 +15,14 @@ class Quickunion
         void UnionGuy(int p, int q);
 
     //find operation
-        void FindGuy(int p);
+        int FindGuy(int p);
 
     //connected operation
         bool ConnectedGuy(int p, int q);
 
     private:
         int* Id;
-
+        int i,t;
 };
 
 #endif
