@@ -31,7 +31,7 @@ int main(){
     while(cin >> p >> q)
     {
 
-
+        // Find operation
         for (i = p; i != id[i]; i = id[i])
             id[i] = id[id[i]];
         for (t = q; t != id[t]; t = id[t])
@@ -40,6 +40,7 @@ int main(){
         if (i == t)
             continue;
 
+        // Union operation
         if (sz[i] < sz[t])
         {
             id[i] = t;
