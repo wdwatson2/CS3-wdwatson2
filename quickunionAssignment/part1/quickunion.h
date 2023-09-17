@@ -5,10 +5,10 @@
 class Quickunion
 {
     public:
-    //constructor *NEEDS PARAMETERS FOR ALL METHODS*
+    //constructor
         Quickunion(int N);
 
-    //destructor (destorys Id array when needed)
+    //destructor (destroys Id array when needed)
         ~Quickunion();
 
     //union operation
@@ -20,8 +20,12 @@ class Quickunion
     //connected operation
         bool ConnectedGuy(int p, int q);
 
+    // Get size of the group that a is in
+        int getSize(int a);
+
     private:
         int* Id;
+        int* Sz;
         int i,t;
 };
 
