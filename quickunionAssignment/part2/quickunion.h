@@ -20,7 +20,7 @@ class Quickunion
     //connected operation
         bool ConnectedGuy(int p, int q);
 
-    // Get size of the group that a is in
+    // Get size of the group that a is in 
         int getSize(int a);
 
     private:

@@ -3,27 +3,6 @@
 
 using namespace std;
 
-/*
-    public:
-    //constructor *NEEDS PARAMETERS FOR ALL METHODS*
-        Quickunion(int N);
-
-    //destructor (destorys Id array when needed)
-        ~Quickunion();
-
-    //union operation
-        void UnionGuy(int p, int q);
-
-    //find operation
-        void FindGuy(int p);
-
-    //connected operation
-        bool ConnectedGuy(int p, int q);
-
-    private:
-        int* Id;
-*/
-
 
 // Constructor for initiallizing Id array
 Quickunion::Quickunion(int N)
@@ -54,6 +33,7 @@ Quickunion::~Quickunion()
 // Union operation
 void Quickunion::UnionGuy(int p, int q)
 {
+    // int temp;
     // This is the find operation with path compression
     // Always connect p to q
     for (i = p; i != Id[i]; i = Id[i])
@@ -63,13 +43,12 @@ void Quickunion::UnionGuy(int p, int q)
 
     if (i == t)
     {
-        cout << p << " and " << q << " are in the same component. Skipping Union operation." << endl;
+        
     }
     else
     {
         Id[i] = t;
         Sz[t] += Sz[i];
-        cout << "union operation was successful" << endl;
     }     
 }
 
@@ -101,5 +80,9 @@ bool Quickunion::ConnectedGuy(int p, int q)
 
 int Quickunion::getSize(int a)
 {
-    return Sz[a];
+    // Climbing to the root of the group
+    for (i = a; i != Id[i]; i = Id[i])
+    {
+    }
+    return Sz[i];
 }

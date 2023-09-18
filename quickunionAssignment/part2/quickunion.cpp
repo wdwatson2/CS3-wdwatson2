@@ -3,27 +3,6 @@
 
 using namespace std;
 
-/*
-    public:
-    //constructor *NEEDS PARAMETERS FOR ALL METHODS*
-        Quickunion(int N);
-
-    //destructor (destorys Id array when needed)
-        ~Quickunion();
-
-    //union operation
-        void UnionGuy(int p, int q);
-
-    //find operation
-        void FindGuy(int p);
-
-    //connected operation
-        bool ConnectedGuy(int p, int q);
-
-    private:
-        int* Id;
-*/
-
 
 // Constructor for initiallizing Id array
 Quickunion::Quickunion(int N)
@@ -64,14 +43,12 @@ void Quickunion::UnionGuy(int p, int q)
 
     if (i == t)
     {
-
+        
     }
     else
     {
         Id[i] = t;
-        // temp = Sz[t];
         Sz[t] += Sz[i];
-        // Sz[i] += temp;
     }     
 }
 
@@ -103,11 +80,7 @@ bool Quickunion::ConnectedGuy(int p, int q)
 
 int Quickunion::getSize(int a)
 {
-    // for(int i = 0; i < 5; i++)
-    // {
-    //     cout << Sz[i] << ", ";
-    // }
-    // cout << endl;
+    // Climbing to the root of the group
     for (i = a; i != Id[i]; i = Id[i])
     {
     }

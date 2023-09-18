@@ -8,7 +8,7 @@ int main(){
     Quickunion test(10000);
     cout << "inst worked" << endl;
 
-    cout << "Finding the root node of p=0 should be zero: " << test.FindGuy(4) << endl;
+    cout << "Finding the root node of p=0 should be zero: " << test.FindGuy(0) << endl;
 
     cout << "Size of the group that 1 is in (1): " << test.getSize(1) << endl;
 

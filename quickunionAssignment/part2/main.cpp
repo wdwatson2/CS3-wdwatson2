@@ -2,19 +2,17 @@
 #include <iostream>
 #include <fstream>
 
-
 using namespace std;
-
 
 void processInstructions(ifstream& inst, int N, int M);
 
 int main(){
-
+    // Reading in a file that contains some instructions to demonstrate the function
     ifstream inst("input.txt");
+
+    //Actually calling the function
     processInstructions(inst, 5, 6);
-
-
-
+    
     return 0;
 }
 
