@@ -34,8 +34,7 @@ Quickunion::~Quickunion()
 void Quickunion::UnionGuy(int p, int q)
 {
     // int temp;
-    // This is the find operation with path compression
-    // Always connect p to q
+    // This is the find operation with path compression by halving
     for (i = p; i != Id[i]; i = Id[i])
         Id[i] = Id[Id[i]];
     for (t = q; t != Id[t]; t = Id[t])
@@ -43,13 +42,18 @@ void Quickunion::UnionGuy(int p, int q)
 
     if (i == t)
     {
-        
     }
-    else
+    //Weighted quick-union     
+    if (Sz[i] < Sz[t])
     {
         Id[i] = t;
         Sz[t] += Sz[i];
-    }     
+    }
+    else
+    {
+        Id[t] = i;
+        Sz[i] += Sz[t];
+    }
 }
 
 // Find operation determines the root of p
