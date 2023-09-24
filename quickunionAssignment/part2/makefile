@@ -11,7 +11,7 @@ CXXFLAGS = -c -g -Wall -std=c++17
 PROGRAM = demo.exe
 
 # list .cpp files separated by space
-CPPFILES = quickunion.cpp main.cpp 
+CPPFILES = main.cpp 
 
 # make build rule/default rule that'll be run when we run "make"
 # first compile each file to object file

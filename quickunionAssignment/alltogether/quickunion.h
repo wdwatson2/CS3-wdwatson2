@@ -1,8 +1,35 @@
-#include "quickunion.h"
-#include <iostream>
+#ifndef QUICKUNION_H
+#define QUICKUNION_H
 
+#include <iostream>
 using namespace std;
 
+class Quickunion
+{
+    public:
+    //constructor
+        Quickunion(int N);
+
+    //destructor (destroys Id array when needed)
+        ~Quickunion();
+
+    //union operation
+        void UnionGuy(int p, int q, bool& connected);
+
+    //find operation
+        int FindGuy(int p);
+
+    //connected operation
+        bool ConnectedGuy(int p, int q);
+
+    // Get size of the group that a is in 
+        int getSize(int a);
+
+    private:
+        int* Id;
+        int* Sz;
+        int i,t;
+};
 
 // Constructor for initiallizing Id array
 Quickunion::Quickunion(int N)
@@ -31,7 +58,7 @@ Quickunion::~Quickunion()
 }
 
 // Union operation
-void Quickunion::UnionGuy(int p, int q)
+void Quickunion::UnionGuy(int p, int q, bool& connected)
 {
     // int temp;
     // This is the find operation with path compression by halving
@@ -42,9 +69,10 @@ void Quickunion::UnionGuy(int p, int q)
 
     if (i == t)
     {
+        connected=true;
     }
     //Weighted quick-union     
-    if (Sz[i] < Sz[t])
+    else if (Sz[i] < Sz[t])
     {
         Id[i] = t;
         Sz[t] += Sz[i];
@@ -90,3 +118,5 @@ int Quickunion::getSize(int a)
     }
     return Sz[i];
 }
+
+#endif

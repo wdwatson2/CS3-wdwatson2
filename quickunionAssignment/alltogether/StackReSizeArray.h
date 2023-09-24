@@ -1,8 +1,24 @@
-#include "StackReSizeArray.h"
-#include <iostream>
+#ifndef STACK_H
+#define STACK_H
+
 #include <math.h>
 
 using namespace std;
+
+template<typename T>
+class StackReSizeArray
+{
+private:
+    T* s;
+    int N=0, capacity;
+public:
+    StackReSizeArray();
+    void push(T item);
+    T pop();
+protected:
+    void resize(int newCapcity);
+};
+
 
 template<typename T>
 StackReSizeArray<T>::StackReSizeArray(): capacity(1)
@@ -29,8 +45,8 @@ T StackReSizeArray<T>::pop()
     {
         resize(round(.5*capacity));
     }
-    T temp = s[N];
-    s[N] = NULL;
+    T temp = s[N-1];
+    N = N-1;
     return temp;
 }
 
@@ -50,3 +66,6 @@ void StackReSizeArray<T>::resize(int newCapacity)
     capacity = newCapacity;
 }
 
+
+
+#endif
